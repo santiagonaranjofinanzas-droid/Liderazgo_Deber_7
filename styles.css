@@ -163,6 +163,12 @@ body {
     gap: 30px;
 }
 
+.single-card-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .card {
     background: #1e293b;
     border-radius: 20px;
@@ -171,6 +177,31 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+}
+
+.card.single-card {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card.single-card {
+        flex-direction: row;
+        min-height: 380px;
+    }
+    
+    .card.single-card .card-image {
+        width: 50%;
+        height: auto;
+        min-height: 380px;
+    }
+    
+    .card.single-card .card-content {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .card:hover {
@@ -273,4 +304,62 @@ footer p {
     .intro-section {
         margin-top: -40px;
     }
+}
+
+/* Leader Name Tag Accent */
+.name-tag.leader {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.35) 0%, rgba(167, 139, 250, 0.35) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.65);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.25);
+    font-weight: 600;
+}
+
+/* Bibliography Section */
+.bib-section {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.bib-card {
+    background: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bib-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.bib-list {
+    list-style: none;
+    padding: 0;
+}
+
+.bib-item {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    padding-left: 24px;
+    text-indent: -24px; /* APA hanging indent style */
+    line-height: 1.6;
+}
+
+.bib-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.3s ease;
+}
+
+.bib-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
